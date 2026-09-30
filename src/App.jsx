@@ -1,9 +1,11 @@
 import './styles/App.css';
+import GameWindow from './gameWindow';
 export default function App() {
   return (
     <>
       <Header />
       <h1>Memory</h1>
+      <GameWindow />
     </>
   );
 }
