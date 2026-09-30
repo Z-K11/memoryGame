@@ -1,0 +1,28 @@
+header {
+  color: var(--mainLight);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw;
+  border-bottom: 0.5rem double var(--mainAlt);
+}
+.headerLeft p {
+  font-size: 2.6rem;
+}
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.6rem;
+}
+.headerRight a {
+  border: 0.1rem solid var(--mainDark);
+  padding: 0.4rem 1.6rem;
+  border-radius: 1rem;
+}
+h1 {
+  color: var(--mainDark);
+  font-size: 7.6rem;
+  text-align: center;
+  padding: 2rem 0;
+}
