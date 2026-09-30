@@ -1,0 +1,24 @@
+.gameWindow {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 10vw;
+  justify-content: space-between;
+  row-gap: 5vw;
+}
+.cardContainer {
+  border: 0.1rem solid var(--mainAlt);
+  padding: 2rem 1rem;
+  border-shape: polygon(0 5%, 5% 0, 100% 0, 100% 95%, 95% 100%, 0 100%);
+  margin: 0 auto;
+}
+.credits {
+  color: var(--mainLight);
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+  font-size: 2rem;
+  padding: 1vw 0;
+}
+.credits a {
+  font-weight: bold;
+}
