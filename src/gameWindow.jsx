@@ -9,20 +9,18 @@ const query = `https://pixabay.com/api/?key=${apiKey}&q=${images}&lang=${queryLa
 export default function GameWindow() {
   const [imgArray, setImgArray] = useState([]);
   const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
   const [prev, setPrevious] = useState([]);
   useEffect(() => {
     fetch(query)
       .then((response) => response.json())
       .then((res) => {
-        setImgArray(res.hits);
-        console.log(res.hits);
+        setImgArray(shuffler(res.hits));
       });
   }, []);
   function handelClick(e) {
     const card = e.target.closest('.cardContainer');
     if (!card) return;
-    console.log(`card = ${card.id} previous = ${prev}`);
-    console.log(card.id === prev.find((element) => element === card.id));
     if (card.id === prev.find((element) => element === card.id)) {
       setScore(0);
       setPrevious([]);
@@ -32,11 +30,14 @@ export default function GameWindow() {
       setPrevious([...prev, card.id]);
       setImgArray(shuffler(imgArray));
     }
+    let currentScore = score + 1;
+    if (currentScore > bestScore) setBestScore(currentScore);
   }
   return (
     <>
       <div className="scoreWindow">
         <p>Score : {score}</p>
+        <p>Best Score : {bestScore}</p>
       </div>
       <div className="gameWindow" onClick={handelClick}>
         {imgArray.map((imgObject) => {
