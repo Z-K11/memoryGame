@@ -1,7 +1,7 @@
 .gameWindow {
   display: flex;
   flex-wrap: wrap;
-  padding: 4rem 10vw;
+  margin: 4rem 10vw;
   justify-content: space-between;
   row-gap: 5vw;
 }
@@ -21,4 +21,9 @@
 }
 .credits a {
   font-weight: bold;
+}
+.scoreWindow p {
+  font-size: 3rem;
+  color: var(--mainAlt);
+  text-align: center;
 }
